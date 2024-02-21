@@ -11,6 +11,7 @@
     -------------------------------------------------------------------------------- 
     1.0     Initial release 
     1.1     small fixes
+    1.2     import module
 
     .PARAMETER DatabaseSource
     The Database to delete
@@ -21,8 +22,10 @@
     .EXAMPLE
     Evacuate_Database_and_delete database1 database2
 
-    .\Purge-LogFiles -DaysToKeep 7 -Auto
 #>
+
+Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
+
 
 param(
     [string]$DatabaseSource=(Read-Host "Bitte Quelldatenbank eingeben"),
