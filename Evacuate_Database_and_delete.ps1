@@ -28,6 +28,8 @@ param(
     [string]$DatabaseDestination=(Read-Host "Bitte Zieldatenbank eingeben")
 )
 
+Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
+
 write-Host "Es wird von: " $DatabaseSource "zu:" $DatabaseDestination "kopiert!" -BackgroundColor Green -ForegroundColor Black
 $Antwort = Read-Host -Prompt "Möchtest du fortfahren? (Ja/Nein)"
 
