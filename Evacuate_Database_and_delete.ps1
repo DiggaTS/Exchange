@@ -64,6 +64,9 @@ if ($Antwort -eq "Ja" -or $antwort -eq "ja") {
 	Get-MailboxImportRequest -Status Completed | Remove-MailboxImportRequest -force
 	Get-MailboxImportRequest -Status Failed | Remove-MailboxImportRequest  -force
 	Get-MailboxImportRequest -Status CompletedWithWarning | Remove-MailboxImportRequest -force
+        Get-MailboxExportRequest -Status Completed | Remove-MailboxExportRequest -force
+        Get-MailboxExportRequest -Status Failed | Remove-MailboxExportRequest -force
+        Get-MailboxExportRequest -Status CompletedWithWarning | Remove-MailboxExportRequest -force
 	}
 elseif ($antwort -eq "Nein" -or $antwort -eq "nein" -or $antwort -eq "N" -or $antwort -eq "n" -or [string]::IsNullOrEmpty($antwort)) {
 
